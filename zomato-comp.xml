@@ -1,0 +1,24 @@
+<App>
+	<Main>
+		<PromotionHeader 
+			iconStart="#" 
+			message="promo message" 
+			followupLink="#" 
+			onClose="onClose()" 
+		>
+		<HeaderNav />
+		<MainSearchNav />
+		<MainPromo/>
+		<SubSearch />
+		<Collections />
+		<QuickOptions />
+		<PopularLocalities />
+		<ZomatoAppPromo />
+		<QuickLinks />
+		<LanguageBar />
+		<AboutZomato />
+		<Geos />
+		<Footer />
+		<Copyright />
+	</Main>
+</App>
