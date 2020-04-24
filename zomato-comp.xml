@@ -1,13 +1,40 @@
 <App>
 	<Main>
+
 		<PromotionHeader 
-			iconStart="#" 
-			message="promo message" 
-			followupLink="#" 
-			onClose="onClose()" 
+			promoLink="{icon:'#',link:'#',linktext:'#'}"
+			followupLink="{link:'#',linktext:'#'}"
+			closeLink="{icon:'#',link:'#'}"
+			onClose="onClose()"
 		>
-		<HeaderNav />
-		<MainSearchNav />
+			<LinkBuilder link=$promoLink />
+			<LinkBuilder link=$followupLink />
+			<LinkBuilder link=$closeLink onClick=$onClose />
+		</PromotionHeader>
+
+		<HeaderNav 
+			head="{icon:'#',link:'#',linktext:'#'}" 
+			others="[{icon:'#',link:'#',linktext:'#'},{icon:'#',link:'#',linktext:'#'}...]" 
+		>
+			<LinkBuilder link=$head />
+			<loop index={0} size=$others.size>
+				<LinkBuilder link=$others[index] />
+			</loop>
+		</HeaderNav>
+
+		<MainSearchNav >
+			<AccountAccess>
+				<Login-Link/>
+				<CreateAccount-Button />
+			</AccountAccess>
+			<MainLogo />
+			<SearchRestaurants searchMessage="search" defaultLocation="Hyderabad" searchPlaceholder="Search for restaurants or cuisines..." searchButtonText="Search">
+				<SearchText text=$searchMessage />
+				<SelectLocation defaultLocation=$defaultLocation />
+				<SearchTextInput placeholder=$searchPlaceholder />
+				<Search-Button text=$searchButtonText/>
+			</SearchRestaurants>
+		</MainSearchNav>
 		<MainPromo/>
 		<SubSearch />
 		<Collections />
